@@ -1,0 +1,44 @@
+body{
+	background-image: url("../../assets/images/dogs.jpg");
+	background-repeat: repeat;
+	text-align: center;
+	color: #605031;
+	font-family: 'Poiret One', cursive;
+
+}
+
+.main-container{
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 70%;
+	height: 700px;
+	background: #ffccbb;
+	border: ridge;
+}
+
+h1{
+	font-size: 50px;
+	font-family: 'Righteous', cursive;
+	color: #c06a4e;
+	text-transform: uppercase;
+	text-shadow: 1px 1px #1b5d43;
+}
+
+
+#guestions-for-trivia{
+	margin: 0 auto;
+	width: 90%;
+	height: auto;
+	padding: 30px;
+}
+
+#start-button{
+	font-size: 30px;
+	width: 70%;
+	padding: 30px;
+	margin-top: 100px;
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
+
+;}
