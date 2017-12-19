@@ -4,6 +4,7 @@ body{
 	text-align: center;
 	color: #605031;
 	font-family: 'Poiret One', cursive;
+	font-size: 20px;
 
 }
 
@@ -44,4 +45,8 @@ h1{
 
 #start-button:hover{
 	opacity: .9;
+}
+
+#timer{
+	font-size: 30px;
 }
