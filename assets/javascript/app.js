@@ -3,44 +3,54 @@ var correct= 0;
 var incorrect= 0;
 var unanswered= 0;
 
-var questions= {
-	questionOne: {
+var questions= [
+	{
 		question: "Through what part of the body do dogs sweat?",
-		possibleAnswers: ["A) Mouth", "B) Ears", "C) Nose", "D) Paws"],
-		answersInOrder:["false", "false", "false", "true"],
-		answer: "D) Paws"
+		correct: "Paws",
+		answer: ["Mouth", "Ears", "Nose", "Paws"],
+	},
+	{
+		question: "Is Ben the best?",
+		correct: "Abso-freakin-lootely",
+		answers: ["Nope he's a dumb butt","Who's Ben?","Apple Pie", "Abso-freakin-lootely"]
 	},
 
-	questionTwo: {
+	{
 		question: "Which TV series had a dog named K9 who was also a robot?",
-		possibleAnswers: ["A) Full House", "B) Star Trek", "C) Doctor Who", "D) Law & Order"],
-		answersInOrder:["false", "false", "true", "false"],
-		answer: "C) Doctor Who"
+		correct: "Doctor Who",
+		answers:["Full House", "Star Trek", "Doctor Who", "Law & Order"]
 	},
 
-	questionThree: {
+	{
 		question: "What breed of dog is the smallest used in hunting?",
-		possibleAnswers: ["A) Chihuahua", "B) Miniature dachshund", "C) Toy poodle", "D) Smooth fox terrier"],
-		answersInOrder:["false", "true", "false", "false"],
-		answer: "B) Miniature dachshund"
+		correct: "Miniature dachshund",
+		answer:["Chihuahua", "Miniature dachshund", "Toy poodle", "Smooth fox terrier"],
 	},
 
-	questionFour: {
+	{
 		question: "Which dog breed has a black tongue?",
 		possibleAnswers: ["A) Husky", "B) Labrador", "C) Weimaraner", "D) Chow Chow"],
 		answersInOrder:["false", "false", "false", "true"],
 		answer: "D) Chow Chow"
 	},
 
-	questionFive: {
+	{
 		question: "Which breed was once known as St. John’s Newfoundland?",
 		possibleAnswers: ["A) Newfoundland", "B) Golden retriever", "C) Labrador", "D) Puli"],
 		answersInOrder:["false", "false", "true", "false"],
 		answer: "C) Labrador"
 	}	
-};
+];
 
 var time = 10;
+
+function createQuestions(question) {
+	$.each(question.answers, function(index, value) {
+		var btn = $("<button>");
+		btn.text(question.answers[index]);
+	}
+	
+};
 
 function reset() {
 	$("#timer").text("00:00");
@@ -86,7 +96,6 @@ function timeConverter(t) {
 };
 
 
-
 	//when start button is clicked- game starts
 	 $("#start-button").on("click", function() {
 	   	console.log('start button clicked')
@@ -97,7 +106,12 @@ function timeConverter(t) {
 
     	start()
     	$('#guestions-for-trivia').html(questions.questionOne.question);
-    	console.log(questions.questionOne)
+    	$('#possible-answers-for-questions').html(questions.questionOne.possibleAnswers);
+
+
+
+
+
 	    		
 	
 	    
