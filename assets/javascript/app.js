@@ -12,45 +12,43 @@ var questions= [
 	{
 		question: "Is Ben the best?",
 		correct: "Abso-freakin-lootely",
-		answers: ["Nope he's a dumb butt","Who's Ben?","Apple Pie", "Abso-freakin-lootely"]
+		answers: ["Nope he's a dumb butt","Who's Ben?", "Abso-freakin-lootely", "Apple pie"]
 	},
 
 	{
 		question: "Which TV series had a dog named K9 who was also a robot?",
 		correct: "Doctor Who",
-		answers:["Full House", "Star Trek", "Doctor Who", "Law & Order"]
+		answers:["Full House", "Doctor Who", "Star Trek", "Law & Order"]
 	},
 
 	{
 		question: "What breed of dog is the smallest used in hunting?",
 		correct: "Miniature dachshund",
-		answer:["Chihuahua", "Miniature dachshund", "Toy poodle", "Smooth fox terrier"],
+		answers:["Miniature dachshund", "Chihuahua", "Toy poodle", "Smooth fox terrier"],
 	},
 
 	{
 		question: "Which dog breed has a black tongue?",
-		possibleAnswers: ["A) Husky", "B) Labrador", "C) Weimaraner", "D) Chow Chow"],
-		answersInOrder:["false", "false", "false", "true"],
-		answer: "D) Chow Chow"
+		correct: "Chow Chow",
+		answers:["Husky", "Labrador", "Chow Chow", "Weimaraner"],
 	},
 
 	{
 		question: "Which breed was once known as St. John’s Newfoundland?",
-		possibleAnswers: ["A) Newfoundland", "B) Golden retriever", "C) Labrador", "D) Puli"],
-		answersInOrder:["false", "false", "true", "false"],
-		answer: "C) Labrador"
+		correct: "Labrador",
+		answers:["Labrador", "Newfoundland", "Golden retriever", "Puli"],
 	}	
 ];
 
 var time = 10;
 
 function createQuestions(question) {
-	$.each(question.answers, function(index, value) {
+	$.each(questions.answers, function(index, value) {
 		var btn = $("<button>");
-		btn.text(question.answers[index]);
+		btn.text(questions.answers[index]);
 	}
-	
 };
+
 
 function reset() {
 	$("#timer").text("00:00");
@@ -110,7 +108,12 @@ function timeConverter(t) {
 
 
 
-
+function createQuestions(question) {
+	$.each(questions.answers, function(index, value) {
+		var btn = $("<button>");
+		btn.text(questions.answers[index]);
+	}
+};
 
 	    		
 	
