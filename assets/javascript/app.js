@@ -40,15 +40,14 @@ var questions= [
 	}	
 ];
 
-var time = 10;
-
 function createQuestions(question) {
 	$.each(questions.answers, function(index, value) {
 		var btn = $("<button>");
 		btn.text(questions.answers[index]);
-	}
+	})
 };
 
+var time = 10;
 
 function reset() {
 	$("#timer").text("00:00");
@@ -94,6 +93,11 @@ function timeConverter(t) {
 };
 
 
+var questionsContainer= $('#quiz');
+var results= $('#results');
+var submitBtn= $('#submit');
+
+
 	//when start button is clicked- game starts
 	 $("#start-button").on("click", function() {
 	   	console.log('start button clicked')
@@ -103,19 +107,10 @@ function timeConverter(t) {
 		$("#timer").text("00:00");
 
     	start()
-    	$('#guestions-for-trivia').html(questions.questionOne.question);
-    	$('#possible-answers-for-questions').html(questions.questionOne.possibleAnswers);
+    	$('guestions-for-trivia').text($(createQuestions()));
 
 
 
-function createQuestions(question) {
-	$.each(questions.answers, function(index, value) {
-		var btn = $("<button>");
-		btn.text(questions.answers[index]);
-	}
-};
-
-	    		
 	
 	    
 
