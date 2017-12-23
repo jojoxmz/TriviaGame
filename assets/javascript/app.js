@@ -100,7 +100,34 @@ var submitBtn= $('#submit');
 
 function setUpQuiz(){
 
-	
+	var output =[];
+
+	questions.forEach((currentQuestion,questionNumber) =>{
+		//store the list of answer choices
+		var answers= [];
+
+		for(letter in currentQuestion.answers){
+			answers.push(
+				`<label>
+					<input type= "radio"
+					name="((question)${questionNumber})"
+					value="${letter}">
+						${letter}:
+
+						${currentQuestion.answers[letter]}
+				</label>`
+		)};
+
+	output.push(
+		`<div class="slide">
+			<div class="questions"> ${currentQuestion.question} </div>
+			<div class="answers"> ${answers.join("")} </div>
+		</div>`
+			);
+});
+
+	questions.innerHTML = output.join("");
+
 };
 
 function showResults(){};
@@ -117,8 +144,8 @@ function showResults(){};
 		$("#timer").text("00:00");
 
     	start()
-    	$('guestions-for-trivia').text($(createQuestions()));
-
+    	setUpQuiz()
+    	console.log(setUpQuiz());
 
 
 	
