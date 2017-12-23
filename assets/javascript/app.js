@@ -98,6 +98,16 @@ var results= $('#results');
 var submitBtn= $('#submit');
 
 
+function setUpQuiz(){
+
+	
+};
+
+function showResults(){};
+
+
+
+
 	//when start button is clicked- game starts
 	 $("#start-button").on("click", function() {
 	   	console.log('start button clicked')
