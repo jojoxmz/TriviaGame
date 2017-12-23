@@ -40,12 +40,12 @@ var questions= [
 	}	
 ];
 
-function createQuestions(question) {
-	$.each(questions.answers, function(index, value) {
-		var btn = $("<button>");
-		btn.text(questions.answers[index]);
-	})
-};
+// function createQuestions(question) {
+// 	$.each(questions.answers, function(index, value) {
+// 		var btn = $("<button>");
+// 		btn.text(questions.answers[index]);
+// 	})
+// };
 
 var time = 10;
 
