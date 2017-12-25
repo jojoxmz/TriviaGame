@@ -124,6 +124,7 @@ function setUpQuiz(){
 			<div class="answers"> ${answers.join("")} </div>
 		</div>`
 			);
+	return;
 });
 
 	questions.innerHTML = output.join("");

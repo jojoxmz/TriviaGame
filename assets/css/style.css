@@ -24,6 +24,9 @@ h1{
 	color: #c06a4e;
 	text-transform: uppercase;
 	text-shadow: 1px 1px #1b5d43;
+	background: grey;
+	border-top: ridge;
+	border-bottom: ridge;
 }
 
 
