@@ -137,7 +137,7 @@ function showResults(){};
 
 $(document).ready(function(){
 
-    $('#guestions').hide();
+	$('#questions').empty();
 
 	//when start button is clicked- game starts
 	 $("#start-button").on("click", function() {
@@ -147,7 +147,7 @@ $(document).ready(function(){
 		
 		$("#timer").text("00:00");
 
-		$('#questions').append();
+		// $('.trivia-questions-container').append('#questions');
 
     	start()
     	console.log(setUpQuiz());
