@@ -154,22 +154,29 @@ $(document).ready(function(){
 
 		 });
 
-			var correctAnswerChoice= false;
 
-		 	$('.correctAnswer').click(function(){
-		 		correctAnswerChoice= true;
 
-		 		if(correctAnswerChoice){
-		 			correct ++;
-		 			console.log('correct: ' + correct);
-		 		}else{
-		 			incorrect ++;
-		 			console.log('incorrect: ' + incorrect);
-		 		}
 
-		 	});
 
-		
+
+		 		//should be used on submit button
+			// var correctAnswerChoice= false;
+
+		 // 	$('.correctAnswer').click(function(){
+		 // 		correctAnswerChoice= true;
+		 // 		correct ++;
+		 // 		console.log('correct: ' + correct);	
+		 //  	});
+
+		 // 	$('.notCorrect').click(function(){
+		 // 		correctAnswerChoice;
+		 // 		incorrect ++;
+		 // 		console.log('incorrect: ' + correct);	
+		 //  	}); 
+
+
+
+			
 
 
 })
