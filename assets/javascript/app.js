@@ -47,7 +47,7 @@ var questions= [
 // 	})
 // };
 
-var time = 10;
+var time = 60;
 
 function reset() {
 	$("#timer").text("00:00");
@@ -58,7 +58,7 @@ function reset() {
 function count() {
 	time--;
 	var converted = timeConverter(time);
-	$("#timer").text(converted);
+	$("#timer").text('Time Remaining: ' + converted);
 	if (time === 0){
 		stop();
 	};
@@ -147,7 +147,7 @@ $(document).ready(function(){
 
 	    $('#start-button').remove();
 		
-		$("#timer").text("00:00");
+		$("#timer").text("Time Remaining: 00:00");
 
 
     	start();
