@@ -135,6 +135,9 @@ function showResults(){};
 
 
 
+$(document).ready(function(){
+
+    $('#guestions').hide();
 
 	//when start button is clicked- game starts
 	 $("#start-button").on("click", function() {
@@ -144,8 +147,9 @@ function showResults(){};
 		
 		$("#timer").text("00:00");
 
+		$('#questions').append();
+
     	start()
-    	setUpQuiz()
     	console.log(setUpQuiz());
 
 
@@ -155,5 +159,6 @@ function showResults(){};
 
 	 });
 
+})
 
 // }
