@@ -17,58 +17,63 @@
 		<h1>Trivia Game <br> "All About Dogs"</h1>
 
 		<div class="trivia-questions-container">
+
 			<div id="timer"></div>
-			<div id="guestions">
-			<p class="questionList" id="question1">Through what part of the body do dogs sweat?
-				<ul>
-					<li input type= "radio">Mouth</li>
-					<li>Ears</li>
-					<li>Nose</li>
-					<li class="correctAnswer">Paws</li>
-				</ul>	
-			<p>
-				
-			<p class="questionList" id="question2">Which TV series had a dog named K9 who was also a robot?
-				<ul>
-					<li>Full house</li>
-					<li class="correctAnswer">Doctor Who</li>
-					<li>Star Trek</li>
-					<li>Law & Order</li>
-				</ul>
-			</p>
 
-			<p class="questionList" id="question3">What breed of dog is the smallest used in hunting?
-				<ul>
-					<li class="correctAnswer">Miniature dachshund</li>
-					<li>Chihuahua</li>
-					<li>Toy poodle</li>
-					<li>Smooth fox terrier</li>
-				</ul>
-			</p>
+				<div id="questions">
+					<p class="questionList" id="question1">Through what part of the body do dogs sweat?
+						<form>
+							<input type="radio" name="answers">Mouth
+							<input type="radio" name="answers">Ears
+							<input type="radio" name="answers">Nose
+							<input type="radio" name="answers" class="correctAnswer">Paws
+						</form>	
+					<p>
+						
+					<p class="questionList" id="question2">Which TV series had a dog named K9 who was also a robot?
+						<form>
+							<input type="radio" name="answers">Full house
+							<input type="radio" name="answers" class="correctAnswer">Doctor Who
+							<input type="radio" name="answers">Star Trek
+							<input type="radio" name="answers">Law and Order
+						</form>
+					</p>
 
-			<p class="questionList" id="question4">Which dog breed has a black tongue?
-				<ul>
-					<li>Husky</li>
-					<li>Labrador</li>
-					<li class="correctAnswer">Chow Chow</li>
-					<li>Weimaraner</li>
-				</ul>
-			</p>
+					<p class="questionList" id="question3">What breed of dog is the smallest used in hunting?
+						<form>
+							<input type="radio" name="answers" class="correctAnswer">Miniature dachshund
+							<input type="radio" name="answers">Chihuahua
+							<input type="radio" name="answers">Toy poodle
+							<input type="radio" name="answers">Smooth fox terrier
+						</form>
+					</p>
 
-			<p class="questionList" id="question5">Which breed was once known as St. John’s Newfoundland?
-				<ul>
-					<li class="correctAnswer">Labrador</li>
-					<li>Newfoundland</li>
-					<li>Golden retriever</li>
-					<li>Puli</li>
-				</ul>
-			</p>
+					<p class="questionList" id="question4">Which dog breed has a black tongue?
+						<form>
+							<input type="radio" name="answers">Husky
+							<input type="radio" name="answers">Labrador
+							<input type="radio" name="answers" class="correctAnswer">Chow Chow
+							<input type="radio" name="answers">Weimaraner
+						</form>
+					</p>
 
+					<p class="questionList" id="question5">Which breed was once known as St. John’s Newfoundland?
+						<form>
+							<input type="radio" name="answers" class="correctAnswer">Labrador
+							<input type="radio" name="answers">Newfoundland
+							<input type="radio" name="answers">Golden retriever
+							<input type="radio" name="answers">Puli
+						</form>
+					</p>
 
-			</div>
+					<button input type="submit" id="submit-button">Submit</button>
+
+				</div>
+
 			<button type="button" id="start-button">Start</button>
-<!-- 			<button id="submit"></button>
- -->		<div id ="results"></div>
+
+			<div id ="results"></div>
+			
 		</div>
 
 	</div>

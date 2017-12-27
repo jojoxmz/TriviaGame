@@ -137,7 +137,9 @@ function showResults(){};
 
 $(document).ready(function(){
 
-	$('#questions').empty();
+	$('#questions').hide();
+	// $('ul').hide();
+	
 
 	//when start button is clicked- game starts
 	 $("#start-button").on("click", function() {
@@ -147,10 +149,14 @@ $(document).ready(function(){
 		
 		$("#timer").text("00:00");
 
-		// $('.trivia-questions-container').append('#questions');
 
-    	start()
-    	console.log(setUpQuiz());
+    	start();
+
+		$('#questions').show();
+		// $('ul').show();
+
+
+    	console.log('#questions');
 
 
 	
