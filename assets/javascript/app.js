@@ -47,7 +47,9 @@ var unanswered= 0;
 // 	})
 // };
 
-var time = 60;
+var time = 5;
+var stopping = false;
+
 
 function reset() {
 	$("#timer").text("00:00");
@@ -70,8 +72,10 @@ function start() {
 };
 
 function stop() {
+	stopping= true;
 	console.log("stopping");
 	clearInterval(intervalId);
+
 };
 
 function timeConverter(t) {
@@ -154,6 +158,10 @@ $(document).ready(function(){
 
 		 });
 
+		 if (stopping === true) {
+		 	console.log ($('input:radio:checked').length);
+
+		 };
 
 
 
