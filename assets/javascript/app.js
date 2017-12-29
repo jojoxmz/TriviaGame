@@ -51,11 +51,11 @@ var time = 5;
 var stopping = false;
 
 
-function reset() {
-	$("#timer").text("00:00");
+// function reset() {
+// 	$("#timer").text("00:00");
 
-	time;
-};
+// 	time;
+// };
 
 function count() {
 	time--;
@@ -75,7 +75,7 @@ function stop() {
 	stopping= true;
 	console.log("stopping");
 	clearInterval(intervalId);
-
+	$('#questions').hide();
 };
 
 function timeConverter(t) {
@@ -100,6 +100,8 @@ function timeConverter(t) {
 // var questionsContainer= $('#quiz');
 var results= $('#results');
 var submitButton= $('#submit-button');
+var userAnswer = '';
+
 
 // var correctAnswerChoice= $('.correctAnswer');
 
@@ -140,6 +142,8 @@ var submitButton= $('#submit-button');
 
 
 
+
+
 $(document).ready(function(){
 
 	$('#questions').hide();	
@@ -147,36 +151,49 @@ $(document).ready(function(){
 		//when start button is clicked- game starts
 		 $("#start-button").on("click", function() {
 		   	console.log('start button clicked')
-
 		    $('#start-button').remove();
 			
 			$("#timer").text("Time Remaining: 00:00");
-
 	    	start();
 
 			$('#questions').show();
 
+			// userAnswer = $('.correctAnswer:input:checked')||{}.value;
+            
+            // if answer is correct
+            if(userAnswer === ($('.correctAnswer:input:checked'))){
+                // add to the number of correct answers
+                correct ++;
+                console.log('This is: ' + correct)
+                };
+
 		 });
 
 		 if (stopping === true) {
-		 	console.log ($('input:radio:checked').length);
+		 	$(results).text('Correct: ' + correct + ' Incorrect: ' + incorrect + ' Unanswered: ' + unanswered);
+		 	console.log('Correct: ' + correct + ' Incorrect: ' + incorrect + ' Unanswered: ' + unanswered);
 
 		 };
 
+	
+			
 
 
 
 
-		 		//should be used on submit button
+
+		 // 		//should be used on submit button
 			// var correctAnswerChoice= false;
 
 		 // 	$('.correctAnswer').click(function(){
+
 		 // 		correctAnswerChoice= true;
 		 // 		correct ++;
 		 // 		console.log('correct: ' + correct);	
 		 //  	});
 
 		 // 	$('.notCorrect').click(function(){
+
 		 // 		correctAnswerChoice;
 		 // 		incorrect ++;
 		 // 		console.log('incorrect: ' + correct);	
