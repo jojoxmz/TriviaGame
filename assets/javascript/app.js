@@ -3,59 +3,54 @@ var correct= 0;
 var incorrect= 0;
 var unanswered= 0;
 
-// var questions= [
-// 	{
-// 		question: "Through what part of the body do dogs sweat?",
-// 		correct: "Paws",
-// 		answer: ["Mouth", "Ears", "Nose", "Paws"],
-// 	},
-// 	{
-// 		question: "Is Ben the best?",
-// 		correct: "Abso-freakin-lootely",
-// 		answers: ["Nope he's a dumb butt","Who's Ben?", "Abso-freakin-lootely", "Apple pie"]
-// 	},
+var questions= [
+	{
+		question: "Through what part of the body do dogs sweat?",
+		correct: "Paws",
+		answer: ["Mouth", "Ears", "Nose", "Paws"],
+	},
+	{
+		question: "Is Ben the best?",
+		correct: "Abso-freakin-lootely",
+		answers: ["Nope he's a dumb butt","Who's Ben?", "Abso-freakin-lootely", "Apple pie"]
+	},
 
-// 	{
-// 		question: "Which TV series had a dog named K9 who was also a robot?",
-// 		correct: "Doctor Who",
-// 		answers:["Full House", "Doctor Who", "Star Trek", "Law & Order"]
-// 	},
+	{
+		question: "Which TV series had a dog named K9 who was also a robot?",
+		correct: "Doctor Who",
+		answers:["Full House", "Doctor Who", "Star Trek", "Law & Order"]
+	},
 
-// 	{
-// 		question: "What breed of dog is the smallest used in hunting?",
-// 		correct: "Miniature dachshund",
-// 		answers:["Miniature dachshund", "Chihuahua", "Toy poodle", "Smooth fox terrier"],
-// 	},
+	{
+		question: "What breed of dog is the smallest used in hunting?",
+		correct: "Miniature dachshund",
+		answers:["Miniature dachshund", "Chihuahua", "Toy poodle", "Smooth fox terrier"],
+	},
 
-// 	{
-// 		question: "Which dog breed has a black tongue?",
-// 		correct: "Chow Chow",
-// 		answers:["Husky", "Labrador", "Chow Chow", "Weimaraner"],
-// 	},
+	{
+		question: "Which dog breed has a black tongue?",
+		correct: "Chow Chow",
+		answers:["Husky", "Labrador", "Chow Chow", "Weimaraner"],
+	},
 
-// 	{
-// 		question: "Which breed was once known as St. John’s Newfoundland?",
-// 		correct: "Labrador",
-// 		answers:["Labrador", "Newfoundland", "Golden retriever", "Puli"],
-// 	}	
-// ];
+	{
+		question: "Which breed was once known as St. John’s Newfoundland?",
+		correct: "Labrador",
+		answers:["Labrador", "Newfoundland", "Golden retriever", "Puli"],
+	}	
+];
 
-// function createQuestions(question) {
-// 	$.each(questions.answers, function(index, value) {
-// 		var btn = $("<button>");
-// 		btn.text(questions.answers[index]);
-// 	})
-// };
+
 
 var time = 5;
 var stopping = false;
 
 
-// function reset() {
-// 	$("#timer").text("00:00");
+function reset() {
+	$("#timer").text("00:00");
 
-// 	time;
-// };
+	time;
+};
 
 function count() {
 	time--;
@@ -103,47 +98,6 @@ var submitButton= $('#submit-button');
 var userAnswer = '';
 
 
-// var correctAnswerChoice= $('.correctAnswer');
-
-// function setUpQuiz(){
-
-// 	var output =[];
-
-// 	questions.forEach((currentQuestion,questionNumber) =>{
-// 		//store the list of answer choices
-// 		var answers= [];
-
-// 		for(letter in currentQuestion.answers){
-// 			answers.push(
-// 				`<label>
-// 					<input type= "radio"
-// 					name="((question)${questionNumber})"
-// 					value="${letter}">
-// 						${letter}:
-
-// 						${currentQuestion.answers[letter]}
-// 				</label>`
-// 		)};
-
-// 	output.push(
-// 		`<div class="slide">
-// 			<div class="questions"> ${currentQuestion.question} </div>
-// 			<div class="answers"> ${answers.join("")} </div>
-// 		</div>`
-// 			);
-// 	return;
-// });
-
-// 	questions.innerHTML = output.join("");
-
-// };
-
-// function showResults(){};
-
-
-
-
-
 $(document).ready(function(){
 
 	$('#questions').hide();	
@@ -169,7 +123,7 @@ $(document).ready(function(){
 
 		 });
 
-		 if (stopping === true) {
+		 if (time === 0) {
 		 	$(results).text('Correct: ' + correct + ' Incorrect: ' + incorrect + ' Unanswered: ' + unanswered);
 		 	console.log('Correct: ' + correct + ' Incorrect: ' + incorrect + ' Unanswered: ' + unanswered);
 
