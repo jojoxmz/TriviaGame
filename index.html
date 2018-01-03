@@ -21,61 +21,52 @@
 			<div id="timer"></div>
 
 				<div id="questions">
-					<form id="questionsForm"></form>
 
+					<form id="quizform" onsubmit="return submitAnswers()">
 
-					<p class="questionList" id="question1">Through what part of the body do dogs sweat?
-						<form>
-							<input type="radio" value="letter" name="answers" class="notCorrect">Mouth
-							<input type="radio" value="letter" name="answers" class="notCorrect">Ears
-							<input type="radio" value="letter" name="answers" class="notCorrect">Nose
-							<input type="radio" value="letter" name="answers" class="correctAnswer">Paws
-						</form>	
-					<p>
+						<p class="questionList" id="question1">Through what part of the body do dogs sweat?</p>
+							<input type="radio" value="a" name="q1" id="answers1a">Mouth
+							<input type="radio" value="b" name="q1" id="answers1b">Ears
+							<input type="radio" value="c" name="q1" id="answers1c">Nose
+							<input type="radio" value="d" name="q1" id="answers1d">Paws
 						
-					<p class="questionList" id="question2">Which TV series had a dog named K9 who was also a robot?
-						<form>
-							<input type="radio" value="letter" name="answers" class="notCorrect">Full house
-							<input type="radio" value="letter" name="answers" class="correctAnswer">Doctor Who
-							<input type="radio" value="letter" name="answers" class="notCorrect">Star Trek
-							<input type="radio" value="letter" name="answers" class="notCorrect">Law and Order
-						</form>
-					</p>
+						<p class="questionList" id="question2">Which TV series had a dog named K9 who was also a robot?</p>
+							<input type="radio" value="a" name="q2" id="answers2a">Full house
+							<input type="radio" value="b" name="q2" id="answers2b">Doctor Who
+							<input type="radio" value="c" name="q2" id="answers2c">Star Trek
+							<input type="radio" value="d" name="q2" id="answers2d">Law and Order
 
-					<p class="questionList" id="question3">What breed of dog is the smallest used in hunting?
-						<form>
-							<input type="radio" value="letter" name="answers" class="correctAnswer">Miniature dachshund
-							<input type="radio" value="letter" name="answers" class="notCorrect">Chihuahua
-							<input type="radio" value="letter" name="answers" class="notCorrect">Toy poodle
-							<input type="radio" value="letter" name="answers" class="notCorrect">Smooth fox terrier
-						</form>
-					</p>
+						<p class="questionList" id="question3">What breed of dog is the smallest used in hunting?</p>
+							<input type="radio" value="a" name="q3" id="answers3a">Miniature dachshund
+							<input type="radio" value="b" name="q3" id="answers3b">Chihuahua
+							<input type="radio" value="c" name="q3" id="answers3c">Toy poodle
+							<input type="radio" value="d" name="q3" id="answers3d">Smooth fox terrier
 
-					<p class="questionList" id="question4">Which dog breed has a black tongue?
-						<form>
-							<input type="radio" value="letter" name="answers" class="notCorrect">Husky
-							<input type="radio" value="letter" name="answers" class="notCorrect">Labrador
-							<input type="radio" value="letter" name="answers" class="correctAnswer">Chow Chow
-							<input type="radio" value="letter" name="answers" class="notCorrect">Weimaraner
-						</form>
-					</p>
+						<p class="questionList" id="question4">Which dog breed has a black tongue?</p>
+							<input type="radio" value="a" name="q4" id="answers4a">Husky
+							<input type="radio" value="b" name="q4" id="answers4b">Labrador
+							<input type="radio" value="c" name="q4" id="answers4c">Chow Chow
+							<input type="radio" value="d" name="q4" id="answers4d">Weimaraner
 
-					<p class="questionList" id="question5">Which breed was once known as St. John’s Newfoundland?
-						<form>
-							<input type="radio" value="letter" name="answers" class="correctAnswer">Labrador
-							<input type="radio" value="letter" name="answers" class="notCorrect">Newfoundland
-							<input type="radio" value="letter" name="answers" class="notCorrect">Golden retriever
-							<input type="radio" value="letter" name="answers" class="notCorrect">Puli
-						</form>
-					</p>
+						<p class="questionList" id="question5">Which breed was once known as St. John’s Newfoundland?</p>
+							<input type="radio" value="a" name="q5" id="answers5a">Labrador
+							<input type="radio" value="b" name="q5" id="answers5b">Newfoundland
+							<input type="radio" value="c" name="q5" id="answers5c">Golden retriever
+							<input type="radio" value="d" name="q5" id="answers5d">Puli
 
-					<button input type="submit" id="submit-button">Submit</button>
+							<br><br><br>
+
+						    <input type="submit" value="submit">
+
+					</form>
+					
+				
 
 				</div>
 
 			<button type="button" id="start-button">Start</button>
 
-			<div id ="results"></div>
+			<div><p id="results"></p> </div>
 
 		</div>
 

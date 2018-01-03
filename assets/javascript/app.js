@@ -1,49 +1,14 @@
-// var questions= [
-// 	{
-// 		question: "Through what part of the body do dogs sweat?",
-// 		correctAnswer: 3,
-// 		allAnswers: ["Mouth", "Ears", "Nose", "Paws"],
-// 	},
-// 	{
-// 		question: "Is Ben the best?",
-// 		correctAnswer: 2,
-// 		allAnswers: ["Nope he's a dumb butt","Who's Ben?", "Abso-freakin-lootely", "Apple pie"]
-// 	},
+var time = 5;
+var results= $('#results');
+var total= 5;
+var correct= 0;
+var incorrect=0;
+var questionsContainer= $('#quiz');
 
-// 	{
-// 		question: "Which TV series had a dog named K9 who was also a robot?",
-// 		correctAnswer: 1,
-// 		allAnswers:["Full House", "Doctor Who", "Star Trek", "Law & Order"]
-// 	},
-
-// 	{
-// 		question: "What breed of dog is the smallest used in hunting?",
-// 		correctAnswer: 0,
-// 		allAnswers:["Miniature dachshund", "Chihuahua", "Toy poodle", "Smooth fox terrier"],
-// 	},
-
-// 	{
-// 		question: "Which dog breed has a black tongue?",
-// 		correctAnswer: 2,
-// 		allAnswers:["Husky", "Labrador", "Chow Chow", "Weimaraner"],
-// 	},
-
-// 	{
-// 		question: "Which breed was once known as St. John’s Newfoundland?",
-// 		correctAnswer: 0,
-// 		allAnswers:["Labrador", "Newfoundland", "Golden retriever", "Puli"],
-// 	}	
-// ];
-
-
-
-var time = 50;
-var stopping = false;
 
 
 function reset() {
 	$("#timer").text("00:00");
-
 	time;
 };
 
@@ -53,6 +18,8 @@ function count() {
 	$("#timer").text('Time Remaining: ' + converted);
 	if (time === 0){
 		stop();
+		results
+
 	};
 };
 
@@ -65,7 +32,12 @@ function stop() {
 	stopping= true;
 	console.log("stopping");
 	clearInterval(intervalId);
-	$('#questions').hide();
+	if (time === 0) {
+		$("#questions").empty();	
+	    results.text("You scored: " + correct + " out of " + total);
+	    //return false;
+	  }
+
 };
 
 function timeConverter(t) {
@@ -87,15 +59,6 @@ function timeConverter(t) {
 };
 
 
-var questionsContainer= $('#quiz');
-var results= $('#results');
-var submitButton= $('#submit-button');
-var userAnswer = '';
-
-			
-var currentquestionCounter = 0;
-var correctAnswersCounter = 0;
-var incorrectAnswersCounter= 0;
 
 
 $(document).ready(function(){
@@ -112,24 +75,36 @@ $(document).ready(function(){
 
 			$('#questions').show();
             
-            // if answer is correct
-            if($('.correctAnswer').on("click", function(){
-                // add to the number of correct answers
-                correctAnswersCounter ++;
-                console.log('Correct: ' + correctAnswersCounter);
-            }));else if ($('.notCorrect').on("click", function(){
-            	incorrectAnswersCounter ++;
-            	console.log('Incorrect: ' + incorrectAnswersCounter);
-        	}));
+            function submitAnswers(){
 
-        	else if (time === 0) {
-		 	$('#questions').hide();
-		 	$(results).text('Correct: ' + correctAnswersCounter + ' Incorrect: ' + incorrectAnswersCounter + ' Unanswered: ' + unanswered);
-		 	console.log('Correct: ' + correctAnswer + ' Incorrect: ' + incorrectAnswersCounter + ' Unanswered: ' + unanswered);
+			var q1= document.forms["quizform"]["q1"].value;
+			var q2= document.forms["quizform"]["q2"].value;
+			var q3= document.forms["quizform"]["q3"].value;
+			var q4= document.forms["quizform"]["q4"].value;
+			var q5= document.forms["quizform"]["q5"].value;
+
+			for(i= 1; i<total; i++){
+				if(eval('q' + i) == null || eval('q' + i) == ""){
+					return false;
+				};
 			};
 
-		 });
+			var answers= ['d','b','a','c','a'];
 
-		 
+			for(i = 1; i < total; i++){
+				if(eval('q' + i) == answers[i -1]){
+					correct++;
+					console.log(correct);
+			}else {
+				incorrect++;
+				console.log(incorrect);
+			};
+			};
+
+			};
 
 	});
+
+
+
+ });
