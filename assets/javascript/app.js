@@ -85,14 +85,17 @@ $(document).ready(function(){
 
 			for(i= 1; i<total; i++){
 				if(eval('q' + i) == null || eval('q' + i) == ""){
+					alert("You missed " + i + " questions.")
 					return false;
 				};
+
 			};
 
+			
 			var answers= ['d','b','a','c','a'];
 
-			for(i = 1; i < total; i++){
-				if(eval('q' + i) == answers[i -1]){
+			for(i = 1; i <= total; i++){
+				if(eval('q' + i) == answers[i - 1]){
 					correct++;
 					console.log(correct);
 			}else {
@@ -100,6 +103,11 @@ $(document).ready(function(){
 				console.log(incorrect);
 			};
 			};
+
+			$(submit).on("click", function(){
+				$("#questions").empty();	
+	   			results.text("You scored: " + correct + " out of " + total);
+			});
 
 			};
 
