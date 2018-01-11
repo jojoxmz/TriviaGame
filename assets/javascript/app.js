@@ -1,9 +1,16 @@
-var time = 5;
+var time = 10;
 var results= $('#results');
 var total= 5;
 var correct= 0;
 var incorrect=0;
 var questionsContainer= $('#quiz');
+
+
+var q1Answer= "d";
+var q2Answer= "b";
+var q3Answer= "a";
+var q4Answer= "c";
+var q5Answer= "a";
 
 
 
@@ -32,11 +39,8 @@ function stop() {
 	stopping= true;
 	console.log("stopping");
 	clearInterval(intervalId);
-	if (time === 0) {
-		$("#questions").empty();	
-	    results.text("You scored: " + correct + " out of " + total);
-	    //return false;
-	  }
+	
+
 
 };
 
@@ -66,53 +70,76 @@ $(document).ready(function(){
 	$('#questions').hide();	
 
 		//when start button is clicked- game starts
-		 $("#start-button").on("click", function() {
+		 $("#start-button").on("click", function(e) {
 		   	console.log('start button clicked')
+		   	e.preventDefault();
     		$(this).hide();
 			
 			$("#timer").text("Time Remaining: 00:00");
 	    	start();
 
-			$('#questions').show();
-            
-            function submitAnswers(){
-
-			var q1= document.forms["quizform"]["q1"].value;
-			var q2= document.forms["quizform"]["q2"].value;
-			var q3= document.forms["quizform"]["q3"].value;
-			var q4= document.forms["quizform"]["q4"].value;
-			var q5= document.forms["quizform"]["q5"].value;
-
-			for(i= 1; i<total; i++){
-				if(eval('q' + i) == null || eval('q' + i) == ""){
-					alert("You missed " + i + " questions.")
-					return false;
-				};
-
-			};
-
-			
-			var answers= ['d','b','a','c','a'];
-
-			for(i = 1; i <= total; i++){
-				if(eval('q' + i) == answers[i - 1]){
-					correct++;
-					console.log(correct);
-			}else {
-				incorrect++;
-				console.log(incorrect);
-			};
-			};
-
-			$(submit).on("click", function(){
-				$("#questions").empty();	
-	   			results.text("You scored: " + correct + " out of " + total);
-			});
-
-			};
-
+	    	$('#questions').show();
+		
 	});
 
+			$('#submit').on("click", function(e){
+				e.preventDefault();
+				$("#questions").hide();	
 
+	            
+	            var q1= $('input[name="q1"]:checked').val();
+	            	console.log(q1);
+	            var q2= $('input[name="q2"]:checked').val();
+	           		console.log(q2);
+	            var q3= $('input[name="q3"]:checked').val();
+	            	console.log(q3);
+	            var q4= $('input[name="q4"]:checked').val();
+	            	console.log(q4);
+	            var q5= $('input[name="q5"]:checked').val();
+	            	console.log(q5);
+
+	            	if(q1 == q1Answer){
+	            		correct++;
+	            		console.log('Correct:' + correct);	
+	            	}else{
+	            		incorrect++;
+	            		console.log('Incorrect:' + incorrect);
+	            	};
+
+	            	if(q2 == q2Answer){
+	            		correct++;
+	            		console.log('Correct:' + correct);	
+	            	}else{
+	            		incorrect++;
+	            		console.log('Incorrect:' + incorrect);
+	            	};
+
+	            	if(q3 == q3Answer){
+	            		correct++;
+	            		console.log('Correct:' + correct);	
+	            	}else{
+	            		incorrect++;
+	            		console.log('Incorrect:' + incorrect);
+	            	};
+
+	            	if(q4 == q4Answer){
+	            		correct++;
+	            		console.log('Correct:' + correct);	
+	            	}else{
+	            		incorrect++;
+	            		console.log('Incorrect:' + incorrect);
+	            	};
+
+	            	if(q5 == q5Answer){
+	            		correct++;
+	            		console.log('Correct:' + correct);	
+	            	}else{
+	            		incorrect++;
+	            		console.log('Incorrect:' + incorrect);
+	            	};
+				
+				results.text("You scored: " + correct + " correct and " + incorrect + " incorrect  out of " + total);
+
+			});
 
  });
